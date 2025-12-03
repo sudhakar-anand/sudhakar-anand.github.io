@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudhakar Anand | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #bbbbbb;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #1f1f1f;
+      padding: 0.5rem;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: #e0e0e0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00bcd4; /* accent color */
+    }
+
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: #00bcd4; /* accent color */
+    }
+
+    .links a {
+      margin: 0 0.5rem;
+      color: #e0e0e0;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .links a:hover {
+      transform: scale(1.2);
+      color: #00bcd4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1f1f1f;
+      color: #888;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#resume">Resume</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Sudhakar Anand</h1>
+    <p>Software Development Engineer</p>
+    <div class="links">
+      <a href="https://github.com/sudhakar-anand"><i class="fab fa-github"></i></a>
+      <a href="https://in.linkedin.com/in/sudhakar-anand-vnit"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:sudhakar.anand.248@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </header>
+  
+  <section id="resume">
+  <h2>Resume</h2>
+  <p>You can view my full resume here:</p>
+  <a href="https://sudhakar-anand.github.io/resume/" target="_blank" 
+     style="display:inline-block; padding:10px 20px; background:#00bcd4; color:#121212; 
+            text-decoration:none; border-radius:5px; font-weight:600;">
+    View Resume
+  </a>
+</section>
+
+<section id="leetcode">
+    <h2>LeetCode</h2>
+    <p>Check out my problem-solving profile:</p>
+    <a href="https://leetcode.com/u/sudhakar_anand/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" 
+         alt="LeetCode Logo" style="height:40px; vertical-align:middle;">
+    </a>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Software engineer with <span id="experience"></span> of backend development experience, specializing in distributed and scalable systems in the FinTech and Publishing domain. Passionate about exploring new technologies and solving real-world problems. Strong individual contributor with a focus on impactful solutions.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p><strong>Software Engineer</strong> — American Chemical Society (Feb 2025 – Present)</p>
+    <ul>
+      <li>Built AI-driven tools for metadata extraction and manuscript similarity search.</li>
+      <li>Migrated of AI modules to AWS Cloud.</li>
+    </ul>
+    <p><strong>Senior Software Associate</strong> — Lentra (Oct 2023 – Jan 2025)</p>
+    <ul>
+      <li>Architected event-driven microservices with Kafka handling 100k+ messages daily.</li>
+      <li>Optimized database queries by 60% with indexing and caching.</li>
+    </ul>
+    <p><strong>Software Engineer</strong> — Lentra (Jun 2021 – Sept 2023)</p>
+    <ul>
+      <li>Developed RESTful backend modules for digital lending platform using Java/Spring Boot.</li>
+      <li>Integrated Spring Security and Hystrix for resilient API communication.</li>
+    </ul>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <ul>
+      <li>GTS Champion Award — American Chemical Society (2025)</li>
+      <li>Spot Award — Lentra AI (2024)</li>
+      <li>User Journey Excellence Award — Federal Bank (2023)</li>
+      <li>LeetCode Knight Badge (Top 5%) — 2025</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p><strong>Languages:</strong> Java, Python, C++, SQL</p>
+    <p><strong>Technologies:</strong> Spring Boot, Microservices, FastAPI, AWS, Docker, Kubernetes, Kafka, PostgreSQL, MongoDB, Hibernate, Redis, Git, Linux</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sudhakar.anand.248@gmail.com">sudhakar.anand.248@gmail.com</a></p>
+  </section>
+
+<footer>
+  <p>&copy; <span id="year"></span> Sudhakar Anand</p>
+</footer>
+
+<script>
+  // Set current year dynamically
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+  <script>
+    // Scroll-triggered animation
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+  
+  <script>
+  function calculateExperience(startYear, startMonth) {
+    const startDate = new Date(startYear, startMonth - 1); // months are 0-indexed
+    const today = new Date();
+
+    let years = today.getFullYear() - startDate.getFullYear();
+    let months = today.getMonth() - startDate.getMonth();
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    return `${years} years ${months} months`;
+  }
+
+  // Update the span with calculated experience
+  document.getElementById("experience").textContent = calculateExperience(2021, 6);
+</script>
+
+</body>
+</html>
