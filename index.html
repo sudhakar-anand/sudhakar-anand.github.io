@@ -34,7 +34,6 @@
   a{color:inherit;}
   .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
 
-  /* NAV */
   header.topnav{
     position:sticky;top:0;z-index:1000;
     background:rgba(255,255,255,0.9);
@@ -74,22 +73,15 @@
     .nav-toggle{display:block;}
   }
 
-  /* HERO */
-  .hero{
-    padding:88px 0 64px;
-  }
-  .hero-inner{
-    display:flex;align-items:center;gap:48px;
-  }
+  .hero{padding:88px 0 64px;}
+  .hero-inner{display:flex;align-items:center;gap:48px;}
   .hero-text{flex:1.3;}
   .eyebrow{
     display:inline-block;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;
     text-transform:uppercase;color:var(--accent);background:var(--accent-soft);
     padding:6px 12px;border-radius:999px;margin-bottom:18px;
   }
-  .hero h1{
-    font-size:2.6rem;font-weight:800;margin:0 0 10px;letter-spacing:-0.02em;
-  }
+  .hero h1{font-size:2.6rem;font-weight:800;margin:0 0 10px;letter-spacing:-0.02em;}
   .hero .role{font-size:1.2rem;color:var(--text-muted);font-weight:500;margin:0 0 20px;}
   .hero p.tagline{font-size:1.03rem;color:var(--text-muted);max-width:520px;margin:0 0 28px;}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
@@ -128,7 +120,6 @@
     .avatar,.avatar-fallback{width:150px;height:150px;}
   }
 
-  /* SECTIONS */
   section{padding:56px 0;}
   section.alt{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
   .section-head{margin-bottom:36px;}
@@ -138,10 +129,9 @@
   }
   .section-head h2{font-size:1.8rem;margin:0;font-weight:800;letter-spacing:-0.01em;}
 
-  /* ABOUT */
   .about-grid{display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;}
   .about-text{flex:1.4;min-width:280px;color:var(--text-muted);font-size:1.02rem;}
-  .stat-grid{flex:1;min-width:220px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .stat-grid{flex:0 0 220px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-self:center;}
   .stat-card{
     background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
     padding:18px;text-align:center;
@@ -149,16 +139,15 @@
   .stat-card .num{font-size:1.7rem;font-weight:800;color:var(--accent);}
   .stat-card .label{font-size:0.82rem;color:var(--text-muted);margin-top:4px;}
 
-  /* EXPERIENCE */
-  .job{
-    display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--border);
-  }
+  .job{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--border);}
   .job:last-child{border-bottom:none;}
   .job-logo{
-    flex:0 0 auto;width:52px;height:52px;border-radius:12px;border:1px solid var(--border);
-    background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;
+    flex:0 0 auto;width:52px;height:52px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:1.05rem;letter-spacing:-0.02em;
   }
-  .job-logo img{width:100%;height:100%;object-fit:contain;padding:8px;}
+  .job-logo.acs{background:linear-gradient(135deg,#1a4fa0,#0d2c5c);}
+  .job-logo.lentra{background:linear-gradient(135deg,#0f9d8c,#0a6b60);}
   .job-body{flex:1;}
   .job-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px;}
   .job-title{font-weight:700;font-size:1.05rem;}
@@ -167,7 +156,6 @@
   .job ul{margin:10px 0 0;padding-left:20px;color:var(--text-muted);}
   .job li{margin-bottom:6px;font-size:0.96rem;}
 
-  /* ACHIEVEMENTS */
   .ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
   .ach-card{
     background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);
@@ -180,7 +168,6 @@
   .ach-card h3{margin:0 0 4px;font-size:0.98rem;}
   .ach-card p{margin:0;color:var(--text-muted);font-size:0.88rem;}
 
-  /* SKILLS */
   .skill-group{margin-bottom:28px;}
   .skill-group h3{font-size:0.95rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:14px;}
   .chip-row{display:flex;flex-wrap:wrap;gap:10px;}
@@ -188,9 +175,8 @@
     display:flex;align-items:center;gap:8px;background:var(--bg-alt);
     border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-size:0.88rem;font-weight:500;
   }
-  .chip img{width:18px;height:18px;object-fit:contain;}
+  .chip i{color:var(--accent);font-size:0.95rem;width:16px;text-align:center;}
 
-  /* CONTACT */
   .contact-card{
     background:linear-gradient(135deg,var(--accent),var(--accent-dark));
     border-radius:20px;padding:44px;text-align:center;color:#fff;
@@ -201,9 +187,7 @@
   .contact-card .social-row a{border-color:rgba(255,255,255,0.35);color:#fff;}
   .contact-card .social-row a:hover{background:#fff;color:var(--accent-dark);}
 
-  footer{
-    text-align:center;padding:28px 0;color:var(--text-muted);font-size:0.85rem;
-  }
+  footer{text-align:center;padding:28px 0;color:var(--text-muted);font-size:0.85rem;}
 </style>
 </head>
 <body>
@@ -259,13 +243,11 @@
     </div>
     <div class="about-grid">
       <p class="about-text">
-        I'm a backend engineer who enjoys owning problems end to end, from understanding a requirement to seeing it run in production. Most of my work sits at the intersection of scalable infrastructure and applied AI: event-driven microservices that process lending data, and agentic workflows that automate manuscript review for a research publisher. I like working as an individual contributor and taking real ownership of what I build. Outside of assigned work, I spend time on LeetCode and try to get familiar with new tools before they become mainstream.
+        I'm a backend engineer who enjoys owning problems end to end, from understanding a requirement to seeing it run in production. Most of my work sits at the intersection of scalable infrastructure and applied AI: event-driven microservices that process lending data, and agentic workflows that automate manuscript review for a research publisher. I like working as an individual contributor and taking real ownership of what I build.
       </p>
       <div class="stat-grid">
         <div class="stat-card"><div class="num" id="expYears">5+</div><div class="label">Years experience</div></div>
-        <div class="stat-card"><div class="num">3</div><div class="label">Companies</div></div>
-        <div class="stat-card"><div class="num">Top 5%</div><div class="label">LeetCode ranking</div></div>
-        <div class="stat-card"><div class="num">6</div><div class="label">Awards received</div></div>
+        <div class="stat-card"><div class="num">2</div><div class="label">Companies</div></div>
       </div>
     </div>
   </div>
@@ -279,7 +261,7 @@
     </div>
 
     <div class="job">
-      <div class="job-logo"><img src="https://logo.clearbit.com/acs.org" alt="ACS International logo" onerror="this.style.display='none'"></div>
+      <div class="job-logo acs">ACS</div>
       <div class="job-body">
         <div class="job-top">
           <div><span class="job-title">Software Engineer</span> <span class="job-company">· ACS International India Pvt. Ltd.</span></div>
@@ -295,7 +277,7 @@
     </div>
 
     <div class="job">
-      <div class="job-logo"><img src="https://logo.clearbit.com/lentra.ai" alt="Lentra logo" onerror="this.style.display='none'"></div>
+      <div class="job-logo lentra">L</div>
       <div class="job-body">
         <div class="job-top">
           <div><span class="job-title">Senior Software Associate</span> <span class="job-company">· Lentra</span></div>
@@ -314,7 +296,7 @@
     </div>
 
     <div class="job">
-      <div class="job-logo"><img src="https://logo.clearbit.com/lentra.ai" alt="Lentra logo" onerror="this.style.display='none'"></div>
+      <div class="job-logo lentra">L</div>
       <div class="job-body">
         <div class="job-top">
           <div><span class="job-title">Software Engineer</span> <span class="job-company">· Lentra</span></div>
@@ -376,41 +358,41 @@
     <div class="skill-group">
       <h3>Languages</h3>
       <div class="chip-row">
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/java/java-original.svg" alt=""> Java</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/python/python-original.svg" alt=""> Python</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/cplusplus/cplusplus-original.svg" alt=""> C++</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/mysql/mysql-original.svg" alt=""> SQL</span>
+        <span class="chip"><i class="fa-brands fa-java"></i> Java</span>
+        <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
+        <span class="chip"><i class="fas fa-code"></i> C++</span>
+        <span class="chip"><i class="fas fa-database"></i> SQL</span>
       </div>
     </div>
 
     <div class="skill-group">
       <h3>Backend &amp; Frameworks</h3>
       <div class="chip-row">
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/spring/spring-original.svg" alt=""> Spring Boot</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/fastapi/fastapi-original.svg" alt=""> FastAPI</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/hibernate/hibernate-original.svg" alt=""> Hibernate</span>
-        <span class="chip"><i class="fas fa-sitemap" style="color:var(--accent)"></i> Microservices</span>
+        <span class="chip"><i class="fas fa-leaf"></i> Spring Boot</span>
+        <span class="chip"><i class="fas fa-bolt"></i> FastAPI</span>
+        <span class="chip"><i class="fas fa-layer-group"></i> Hibernate</span>
+        <span class="chip"><i class="fas fa-sitemap"></i> Microservices</span>
       </div>
     </div>
 
     <div class="skill-group">
       <h3>Data &amp; Messaging</h3>
       <div class="chip-row">
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/postgresql/postgresql-original.svg" alt=""> PostgreSQL</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/mongodb/mongodb-original.svg" alt=""> MongoDB</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/redis/redis-original.svg" alt=""> Redis</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/apachekafka/apachekafka-original.svg" alt=""> Kafka</span>
+        <span class="chip"><i class="fas fa-database"></i> PostgreSQL</span>
+        <span class="chip"><i class="fas fa-database"></i> MongoDB</span>
+        <span class="chip"><i class="fas fa-memory"></i> Redis</span>
+        <span class="chip"><i class="fas fa-stream"></i> Kafka</span>
       </div>
     </div>
 
     <div class="skill-group">
       <h3>Cloud &amp; DevOps</h3>
       <div class="chip-row">
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt=""> AWS</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/docker/docker-original.svg" alt=""> Docker</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/kubernetes/kubernetes-plain.svg" alt=""> Kubernetes</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/git/git-original.svg" alt=""> Git</span>
-        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/linux/linux-original.svg" alt=""> Linux</span>
+        <span class="chip"><i class="fa-brands fa-aws"></i> AWS</span>
+        <span class="chip"><i class="fa-brands fa-docker"></i> Docker</span>
+        <span class="chip"><i class="fas fa-dharmachakra"></i> Kubernetes</span>
+        <span class="chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+        <span class="chip"><i class="fa-brands fa-linux"></i> Linux</span>
       </div>
     </div>
   </div>
@@ -438,13 +420,11 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Mobile nav toggle
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
   navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
   navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
 
-  // Avatar fallback if profile photo is missing
   const avatarImg = document.getElementById("avatarImg");
   const avatarFallback = document.getElementById("avatarFallback");
   avatarImg.addEventListener("error", () => {
@@ -452,7 +432,6 @@
     avatarFallback.style.display = "flex";
   });
 
-  // Dynamic years of experience (from June 2021)
   function calculateExperience(startYear, startMonth) {
     const start = new Date(startYear, startMonth - 1);
     const now = new Date();
