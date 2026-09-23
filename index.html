@@ -1,300 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudhakar Anand | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudhakar Anand | Software Development Engineer</title>
+<meta name="description" content="Portfolio of Sudhakar Anand, a backend software engineer specializing in distributed systems, cloud infrastructure and agentic AI workflows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --bg:#f7f8fb;
+    --bg-alt:#ffffff;
+    --text:#171a26;
+    --text-muted:#5c6178;
+    --border:#e6e8f0;
+    --accent:#3454d1;
+    --accent-dark:#243a9e;
+    --accent-soft:#eaefff;
+    --radius:14px;
+    --shadow:0 6px 20px rgba(23,26,38,0.06);
+    --shadow-hover:0 12px 28px rgba(23,26,38,0.1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.65;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
 
-    header {
-      text-align: center;
-      padding: 4rem 1rem;
-      animation: fadeIn 1.5s ease-in-out;
-    }
+  /* NAV */
+  header.topnav{
+    position:sticky;top:0;z-index:1000;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .navbar{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1040px;margin:0 auto;padding:14px 24px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-weight:700;font-size:1.05rem;text-decoration:none;color:var(--text);
+  }
+  .brand .mono{
+    width:34px;height:34px;border-radius:9px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:0.85rem;font-weight:700;
+  }
+  nav.links{display:flex;gap:28px;}
+  nav.links a{
+    text-decoration:none;color:var(--text-muted);font-size:0.94rem;font-weight:500;
+    transition:color .2s ease;
+  }
+  nav.links a:hover{color:var(--accent);}
+  .nav-toggle{display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: #ffffff;
+  @media (max-width:760px){
+    nav.links{
+      position:absolute;top:100%;left:0;right:0;
+      background:#fff;border-bottom:1px solid var(--border);
+      flex-direction:column;padding:14px 24px;gap:14px;
+      display:none;
     }
+    nav.links.open{display:flex;}
+    .nav-toggle{display:block;}
+  }
 
-    header p {
-      font-size: 1.2rem;
-      color: #bbbbbb;
-    }
+  /* HERO */
+  .hero{
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    display:flex;align-items:center;gap:48px;
+  }
+  .hero-text{flex:1.3;}
+  .eyebrow{
+    display:inline-block;font-size:0.8rem;font-weight:600;letter-spacing:0.04em;
+    text-transform:uppercase;color:var(--accent);background:var(--accent-soft);
+    padding:6px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:2.6rem;font-weight:800;margin:0 0 10px;letter-spacing:-0.02em;
+  }
+  .hero .role{font-size:1.2rem;color:var(--text-muted);font-weight:500;margin:0 0 20px;}
+  .hero p.tagline{font-size:1.03rem;color:var(--text-muted);max-width:520px;margin:0 0 28px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:10px;font-weight:600;font-size:0.95rem;
+    text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+  .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--border);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+  .social-row{display:flex;gap:14px;margin-top:26px;}
+  .social-row a{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;color:var(--text-muted);
+    transition:all .2s ease;text-decoration:none;
+  }
+  .social-row a:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-    nav {
-      position: sticky;
-      top: 0;
-      background: #1f1f1f;
-      padding: 0.5rem;
-      text-align: center;
-      z-index: 1000;
-    }
+  .avatar-wrap{flex:0 0 auto;position:relative;}
+  .avatar{
+    width:200px;height:200px;border-radius:28px;object-fit:cover;
+    box-shadow:var(--shadow-hover);border:4px solid #fff;
+  }
+  .avatar-fallback{
+    width:200px;height:200px;border-radius:28px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+    color:#fff;display:none;align-items:center;justify-content:center;
+    font-size:3rem;font-weight:800;box-shadow:var(--shadow-hover);border:4px solid #fff;
+  }
+  @media (max-width:760px){
+    .hero-inner{flex-direction:column-reverse;text-align:center;gap:28px;}
+    .hero p.tagline{margin-left:auto;margin-right:auto;}
+    .cta-row,.social-row{justify-content:center;}
+    .avatar,.avatar-fallback{width:150px;height:150px;}
+  }
 
-    nav a {
-      margin: 0 1rem;
-      color: #e0e0e0;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      display: inline-block;
-    }
+  /* SECTIONS */
+  section{padding:56px 0;}
+  section.alt{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .section-head{margin-bottom:36px;}
+  .section-head .tag{
+    font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:8px;display:block;
+  }
+  .section-head h2{font-size:1.8rem;margin:0;font-weight:800;letter-spacing:-0.01em;}
 
-    nav a:hover {
-      color: #00bcd4; /* accent color */
-    }
+  /* ABOUT */
+  .about-grid{display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;}
+  .about-text{flex:1.4;min-width:280px;color:var(--text-muted);font-size:1.02rem;}
+  .stat-grid{flex:1;min-width:220px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .stat-card{
+    background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px;text-align:center;
+  }
+  .stat-card .num{font-size:1.7rem;font-weight:800;color:var(--accent);}
+  .stat-card .label{font-size:0.82rem;color:var(--text-muted);margin-top:4px;}
 
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+  /* EXPERIENCE */
+  .job{
+    display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--border);
+  }
+  .job:last-child{border-bottom:none;}
+  .job-logo{
+    flex:0 0 auto;width:52px;height:52px;border-radius:12px;border:1px solid var(--border);
+    background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .job-logo img{width:100%;height:100%;object-fit:contain;padding:8px;}
+  .job-body{flex:1;}
+  .job-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px;}
+  .job-title{font-weight:700;font-size:1.05rem;}
+  .job-company{color:var(--accent);font-weight:600;}
+  .job-meta{color:var(--text-muted);font-size:0.88rem;white-space:nowrap;}
+  .job ul{margin:10px 0 0;padding-left:20px;color:var(--text-muted);}
+  .job li{margin-bottom:6px;font-size:0.96rem;}
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* ACHIEVEMENTS */
+  .ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+  .ach-card{
+    background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow);display:flex;gap:14px;
+  }
+  .ach-icon{
+    flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--accent-soft);
+    color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.05rem;
+  }
+  .ach-card h3{margin:0 0 4px;font-size:0.98rem;}
+  .ach-card p{margin:0;color:var(--text-muted);font-size:0.88rem;}
 
-    h2 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-      color: #00bcd4; /* accent color */
-    }
+  /* SKILLS */
+  .skill-group{margin-bottom:28px;}
+  .skill-group h3{font-size:0.95rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:14px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{
+    display:flex;align-items:center;gap:8px;background:var(--bg-alt);
+    border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-size:0.88rem;font-weight:500;
+  }
+  .chip img{width:18px;height:18px;object-fit:contain;}
 
-    .links a {
-      margin: 0 0.5rem;
-      color: #e0e0e0;
-      font-size: 1.5rem;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
+  /* CONTACT */
+  .contact-card{
+    background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+    border-radius:20px;padding:44px;text-align:center;color:#fff;
+  }
+  .contact-card h2{margin:0 0 10px;font-size:1.6rem;}
+  .contact-card p{color:rgba(255,255,255,0.85);margin:0 0 26px;}
+  .contact-card .btn-primary{background:#fff;color:var(--accent-dark);}
+  .contact-card .social-row a{border-color:rgba(255,255,255,0.35);color:#fff;}
+  .contact-card .social-row a:hover{background:#fff;color:var(--accent-dark);}
 
-    .links a:hover {
-      transform: scale(1.2);
-      color: #00bcd4;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #1f1f1f;
-      color: #888;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      nav a {
-        margin: 0.5rem;
-        font-size: 0.9rem;
-      }
-      section {
-        margin: 1.5rem auto;
-        padding: 0 0.5rem;
-      }
-      h2 {
-        font-size: 1.2rem;
-      }
-      .links a {
-        font-size: 1.2rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-      header p {
-        font-size: 0.9rem;
-      }
-      nav a {
-        font-size: 0.8rem;
-      }
-      section {
-        margin: 1rem auto;
-        padding: 0 0.5rem;
-      }
-      h2 {
-        font-size: 1rem;
-      }
-      .links a {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  footer{
+    text-align:center;padding:28px 0;color:var(--text-muted);font-size:0.85rem;
+  }
+</style>
 </head>
 <body>
-  <nav>
-    <a href="#resume">Resume</a>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
-  <header>
-    <h1>Sudhakar Anand</h1>
-    <p>Software Development Engineer</p>
-    <div class="links">
-      <a href="https://github.com/sudhakar-anand"><i class="fab fa-github"></i></a>
-      <a href="https://in.linkedin.com/in/sudhakar-anand-vnit"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:sudhakar.anand.248@gmail.com"><i class="fas fa-envelope"></i></a>
+<header class="topnav">
+  <div class="navbar">
+    <a href="#top" class="brand"><span class="mono">SA</span> Sudhakar Anand</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="https://sudhakar-anand.github.io/resume/" target="_blank">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow">Available for new opportunities</span>
+      <h1>Sudhakar Anand</h1>
+      <p class="role">Software Development Engineer</p>
+      <p class="tagline">I build backend systems and agentic AI workflows for FinTech and research platforms. My work spans distributed systems, cloud infrastructure and production-grade Python and Java services.</p>
+      <div class="cta-row">
+        <a href="https://sudhakar-anand.github.io/resume/" target="_blank" class="btn btn-primary"><i class="fas fa-file-arrow-down"></i> View Resume</a>
+        <a href="#contact" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Get in touch</a>
+      </div>
+      <div class="social-row">
+        <a href="https://github.com/sudhakar-anand" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://in.linkedin.com/in/sudhakar-anand-vnit" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:sudhakar.anand.248@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://leetcode.com/u/sudhakar_anand/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+      </div>
     </div>
-  </header>
-  
-  <section id="resume">
-  <h2>Resume</h2>
-  <p>You can view my full resume here:</p>
-  <a href="https://sudhakar-anand.github.io/resume/" target="_blank" 
-     style="display:inline-block; padding:10px 20px; background:#00bcd4; color:#121212; 
-            text-decoration:none; border-radius:5px; font-weight:600;">
-    View Resume
-  </a>
+    <div class="avatar-wrap">
+      <!-- Replace the src below with your own photo, e.g. "assets/profile.jpg" -->
+      <img src="assets/profile.jpg" alt="Sudhakar Anand" class="avatar" id="avatarImg">
+      <div class="avatar-fallback" id="avatarFallback">SA</div>
+    </div>
+  </div>
 </section>
 
-<section id="leetcode">
-    <h2>LeetCode</h2>
-    <p>Check out my problem-solving profile:</p>
-    <a href="https://leetcode.com/u/sudhakar_anand/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" 
-         alt="LeetCode Logo" style="height:40px; vertical-align:middle;">
-    </a>
-  </section>
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">About</span>
+      <h2>A bit about how I work</h2>
+    </div>
+    <div class="about-grid">
+      <p class="about-text">
+        I'm a backend engineer who enjoys owning problems end to end, from understanding a requirement to seeing it run in production. Most of my work sits at the intersection of scalable infrastructure and applied AI: event-driven microservices that process lending data, and agentic workflows that automate manuscript review for a research publisher. I like working as an individual contributor and taking real ownership of what I build. Outside of assigned work, I spend time on LeetCode and try to get familiar with new tools before they become mainstream.
+      </p>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="num" id="expYears">5+</div><div class="label">Years experience</div></div>
+        <div class="stat-card"><div class="num">3</div><div class="label">Companies</div></div>
+        <div class="stat-card"><div class="num">Top 5%</div><div class="label">LeetCode ranking</div></div>
+        <div class="stat-card"><div class="num">6</div><div class="label">Awards received</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      Software engineer with <span id="experience"></span> of backend development experience,
-      specializing in distributed and scalable systems in the FinTech domain.
-      I have experience in building backend services and agentic workflows. 
-      I’m passionate about exploring new technologies and using them to solve real-world problems. 
-      I enjoy working as an Individual Contributor (IC), taking ownership of my work and focusing on building solutions that create real impact.
-    </p>
-  </section>
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Experience</span>
+      <h2>Where I've worked</h2>
+    </div>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <p><strong>Software Engineer</strong> — ACS International India Pvt. Ltd. (Feb 2025 – Present, Pune)</p>
-    <ul>
-      <li>Built an Agentic Editor Assignment system using LangGraph to orchestrate multi-step agentic workflows that automate real-time manuscript-to-editor matching factoring in editor workload, topic expertise, and historical assignment patterns.</li>
-      <li>Contributed to cloud migration efforts for the ACS Publications AI modules from on-prem to AWS EKS.</li>
-      <li>>Worked with vector databases like OpenSearch and Vertex AI for similarity search to identify similar publication manuscripts.</li>
-      <li>Collaborated with research and product teams to translate ML model outputs into production-grade backend services using Python and FastAPI.</li>
-    </ul>
-    <p><strong>Senior Software Associate</strong> — Lentra (Oct 2023 – Jan 2025, Pune)</p>
-    <ul>
-      <li>Led backend development of a Java/Spring Boot Loan Origination System, improving throughput and reliability.</li>
-      <li>Architected an event-driven notification microservice using Kafka, processing 100k+ messages daily.</li>
-      <li>Implemented a secure SFTP file transfer pipeline handling multi-gigabyte data loads.</li>
-      <li>Optimized database performance through indexing and caching strategies, reducing query times by 60%.</li>
-      <li>Spearheaded Non-Functional Requirements initiatives: resolved SonarQube vulnerabilities and upgraded Java from 8 to 21.</li>
-      <li>Designed and developed a scheduler to automate daily and weekly business report generation.</li>
-      <li>Mentored junior engineers, establishing coding best practices and conducting code reviews.</li>
-    </ul>
-    <p><strong>Software Engineer</strong> — Lentra (Jun 2021 – Sept 2023, Pune)</p>
-    <ul>
-      <li>Developed RESTful backend modules for a digital lending platform using Java and Spring Boot.</li>
-      <li>Integrated Spring Security and Hystrix to build fault-tolerant communication layers for third-party APIs.</li>
-      <li>Collaborated closely with QA and Product teams to maintain 95%+ bug-free release cycles and streamline CI/CD processes.</li>
-    </ul>
-  </section>
+    <div class="job">
+      <div class="job-logo"><img src="https://logo.clearbit.com/acs.org" alt="ACS International logo" onerror="this.style.display='none'"></div>
+      <div class="job-body">
+        <div class="job-top">
+          <div><span class="job-title">Software Engineer</span> <span class="job-company">· ACS International India Pvt. Ltd.</span></div>
+          <div class="job-meta">Feb 2025 – Present · Pune</div>
+        </div>
+        <ul>
+          <li>Built an agentic editor assignment system with LangGraph to automate manuscript-to-editor matching, factoring in editor workload, topic expertise and historical assignment patterns.</li>
+          <li>Contributed to the migration of ACS Publications' AI modules from on-prem infrastructure to AWS EKS.</li>
+          <li>Worked with vector databases, including OpenSearch and Vertex AI, for similarity search across publication manuscripts.</li>
+          <li>Partnered with research and product teams to turn ML model outputs into production-grade backend services using Python and FastAPI.</li>
+        </ul>
+      </div>
+    </div>
 
-  <section id="achievements">
-    <h2>Key Achievements</h2>
-    <ul>
-      <li>GTS Champion Award — ASC-I India (2025): Outstanding engineering contributions advancing team success.</li>
-      <li>Spot Award — Lentra AI (2024): Recognized for outstanding effort and contribution.</li>
-      <li>User Journey Excellence Award — Federal Bank (2023): Developed a platform with exceptional user experience.</li>
-      <li>Clean Coder Award — Lentra AI (2022): Recognized for coding discipline and craftsmanship.</li>
-      <li>LeetCode Knight Badge — LeetCode (2025): Achieved Knight badge, among top 5% of active profiles.</li>
-      <li>Competitive Examinations: Qualified JEE Mains (2017), JEE Advanced (2017), and GATE (CSE) (2022).</li>
-    </ul>
-  </section>
+    <div class="job">
+      <div class="job-logo"><img src="https://logo.clearbit.com/lentra.ai" alt="Lentra logo" onerror="this.style.display='none'"></div>
+      <div class="job-body">
+        <div class="job-top">
+          <div><span class="job-title">Senior Software Associate</span> <span class="job-company">· Lentra</span></div>
+          <div class="job-meta">Oct 2023 – Jan 2025 · Pune</div>
+        </div>
+        <ul>
+          <li>Led backend development of a Java and Spring Boot loan origination system, improving throughput and reliability.</li>
+          <li>Architected an event-driven notification microservice on Kafka, processing over 100,000 messages daily.</li>
+          <li>Implemented a secure SFTP file transfer pipeline for multi-gigabyte data loads.</li>
+          <li>Improved database performance through indexing and caching, cutting query times by 60 percent.</li>
+          <li>Led non-functional requirement initiatives: resolved SonarQube vulnerabilities and upgraded Java from version 8 to 21.</li>
+          <li>Designed a scheduler to automate daily and weekly business report generation.</li>
+          <li>Mentored junior engineers on coding standards and conducted code reviews.</li>
+        </ul>
+      </div>
+    </div>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p><strong>Languages:</strong> Java, Python, C++, SQL</p>
-    <p><strong>Technologies:</strong> Spring Boot, Microservices, FastAPI, AWS, Docker, Kubernetes, Kafka, PostgreSQL, MongoDB, Hibernate, Redis, Git, Linux</p>
-  </section>
+    <div class="job">
+      <div class="job-logo"><img src="https://logo.clearbit.com/lentra.ai" alt="Lentra logo" onerror="this.style.display='none'"></div>
+      <div class="job-body">
+        <div class="job-top">
+          <div><span class="job-title">Software Engineer</span> <span class="job-company">· Lentra</span></div>
+          <div class="job-meta">Jun 2021 – Sep 2023 · Pune</div>
+        </div>
+        <ul>
+          <li>Developed RESTful backend modules for a digital lending platform using Java and Spring Boot.</li>
+          <li>Integrated Spring Security and Hystrix to build fault-tolerant communication layers for third-party APIs.</li>
+          <li>Worked closely with QA and product teams to keep release cycles above 95 percent bug-free and streamline CI/CD.</li>
+        </ul>
+      </div>
+    </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sudhakar.anand.248@gmail.com">sudhakar.anand.248@gmail.com</a></p>
-  </section>
+  </div>
+</section>
+
+<section id="achievements" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Recognition</span>
+      <h2>Achievements</h2>
+    </div>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fas fa-trophy"></i></div>
+        <div><h3>GTS Champion Award</h3><p>ACS International, 2025 · Recognized for engineering contributions that advanced team goals.</p></div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fas fa-star"></i></div>
+        <div><h3>Spot Award</h3><p>Lentra AI, 2024 · Recognized for outstanding effort and contribution.</p></div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fas fa-heart"></i></div>
+        <div><h3>User Journey Excellence Award</h3><p>Federal Bank, 2023 · For building a platform with a strong user experience.</p></div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fas fa-broom"></i></div>
+        <div><h3>Clean Coder Award</h3><p>Lentra AI, 2022 · Recognized for coding discipline and craftsmanship.</p></div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fas fa-code"></i></div>
+        <div><h3>LeetCode Knight Badge</h3><p>2025 · Placed among the top 5 percent of active profiles.</p></div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div><h3>Competitive Examinations</h3><p>Qualified JEE Mains and JEE Advanced (2017), and GATE CSE (2022).</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Skills</span>
+      <h2>Tech I work with</h2>
+    </div>
+
+    <div class="skill-group">
+      <h3>Languages</h3>
+      <div class="chip-row">
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/java/java-original.svg" alt=""> Java</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/python/python-original.svg" alt=""> Python</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/cplusplus/cplusplus-original.svg" alt=""> C++</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/mysql/mysql-original.svg" alt=""> SQL</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Backend &amp; Frameworks</h3>
+      <div class="chip-row">
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/spring/spring-original.svg" alt=""> Spring Boot</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/fastapi/fastapi-original.svg" alt=""> FastAPI</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/hibernate/hibernate-original.svg" alt=""> Hibernate</span>
+        <span class="chip"><i class="fas fa-sitemap" style="color:var(--accent)"></i> Microservices</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Data &amp; Messaging</h3>
+      <div class="chip-row">
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/postgresql/postgresql-original.svg" alt=""> PostgreSQL</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/mongodb/mongodb-original.svg" alt=""> MongoDB</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/redis/redis-original.svg" alt=""> Redis</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/apachekafka/apachekafka-original.svg" alt=""> Kafka</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Cloud &amp; DevOps</h3>
+      <div class="chip-row">
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt=""> AWS</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/docker/docker-original.svg" alt=""> Docker</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/kubernetes/kubernetes-plain.svg" alt=""> Kubernetes</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/git/git-original.svg" alt=""> Git</span>
+        <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon/icons/linux/linux-original.svg" alt=""> Linux</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2>Let's talk</h2>
+      <p>Open to backend and AI engineering roles. Feel free to reach out.</p>
+      <a href="mailto:sudhakar.anand.248@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> sudhakar.anand.248@gmail.com</a>
+      <div class="social-row" style="justify-content:center;margin-top:22px;">
+        <a href="https://github.com/sudhakar-anand" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://in.linkedin.com/in/sudhakar-anand-vnit" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://leetcode.com/u/sudhakar_anand/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <p>&copy; <span id="year"></span> Sudhakar Anand</p>
+  <p>&copy; <span id="year"></span> Sudhakar Anand. Built with plain HTML and CSS.</p>
 </footer>
 
 <script>
-  // Set current year dynamically
   document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
-  <script>
-    // Scroll-triggered animation
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
+  // Mobile nav toggle
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
+  navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
-  
-  <script>
+  // Avatar fallback if profile photo is missing
+  const avatarImg = document.getElementById("avatarImg");
+  const avatarFallback = document.getElementById("avatarFallback");
+  avatarImg.addEventListener("error", () => {
+    avatarImg.style.display = "none";
+    avatarFallback.style.display = "flex";
+  });
+
+  // Dynamic years of experience (from June 2021)
   function calculateExperience(startYear, startMonth) {
-    const startDate = new Date(startYear, startMonth - 1); // months are 0-indexed
-    const today = new Date();
-
-    let years = today.getFullYear() - startDate.getFullYear();
-    let months = today.getMonth() - startDate.getMonth();
-
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-
-    return `${years} years ${months} months`;
+    const start = new Date(startYear, startMonth - 1);
+    const now = new Date();
+    let years = now.getFullYear() - start.getFullYear();
+    let months = now.getMonth() - start.getMonth();
+    if (months < 0) { years--; months += 12; }
+    return years;
   }
-
-  // Update the span with calculated experience
-  document.getElementById("experience").textContent = calculateExperience(2021, 6);
+  document.getElementById("expYears").textContent = calculateExperience(2021, 6) + "+";
 </script>
 
 </body>
